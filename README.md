@@ -72,7 +72,56 @@ The up arrow `↑` gives access to the previous command entered, and the down ar
 ```bash
 $ echo tree
 tree
-$ echo tree //=> ↑ echo tree: returns previous command
+$ echo tree # using ↑ returns previous command
+```
+
+To go to the front of a line, hit `Ctrl-A or Command-A`. To go to the end of the line, hit `Ctrl-E or Command-E`. These allow quick access instead of having to use `←` multiple times to go to the front of the line. To remove all contents from the line, use `Ctrl-U or Command-U` which __does not__ create a new line like `Ctrl-C or Command-C`. 
+```bash
+$ orange 
+$ echo orange # using Ctrl-A to go to the front and add echo to fix command
+$ asdfghjkl 
+$             # using Ctrl-U to clear to the beginning of the line. 
+```
+
+To clear the screen of the command line interface, enter the command `clear` or hit `Ctrl-L or Command-L`. To exit the terminal window, enter the command `exit` or hit `Ctrl-D or Command-D`.
+```bash
+$ echo before 
+$ before 
+$ echo after
+$ after
+$            # using Ctrl-L to clear the terminal window
+```
+```bash
+$ exit       # using Ctrl-D to exit the terminal window
+```
+
+To create a file and input a string, enter the redirect operator `>` followed by the name of the file. If the file does not exist, it will create it. If the file exits, it will overwrite the information in the file. 
+```bash
+$ echo "strawberry banana smoothie" > yummy.txt
+```
+
+To print out the contents of the file, enter the command `cat` that is short for "concatenate".  
+```bash
+$ cat yummy.txt
+$ strawberry banana smoothie
+```
+
+To add another line to the text file, enter the append operator `>>` in place of the redirect operator `>`. If the file does not exist, it will create it. If the file exists, it will append the string to a new line. 
+```bash
+$ echo "red bean scores" >> yummy.txt
+$ strawberry banana smoothie
+$ red bean scores 
+```
+
+To compare two files, similarly to comparing changes in _Git_, enter the `diff` command followed by the name of the two files. 
+```bash
+$ echo "strawberry banana smoothie" > drinks.txt
+$ echo "chocolate milk" >> drinks.txt
+$ diff yummy.txt drinks.txt
+2c2
+< red bean scores
+---
+> chocolate milk
 ```
 
 In conclusion, here is the roadmap to solving common problems. 
@@ -80,8 +129,10 @@ In conclusion, here is the roadmap to solving common problems.
 ![image](https://user-images.githubusercontent.com/65037987/110256744-89ca6080-7f68-11eb-8c3c-41d9e5721e56.png)
 
 If all else fails, try these:
-* [ ] Have you restarted the application?
-* [ ] Have you rebooted the device?
-* [ ] Have you tried uninstalling and reinstalling the app?
+- [ ] Have you restarted the application?
+- [ ] Have you rebooted the device?
+- [ ] Have you tried uninstalling and reinstalling the app?
 
 If you checked all these boxes and still have not derived a solution, take a break, and then 99% of the time, you'll realize what the answer is. 
+
+
